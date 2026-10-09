@@ -1,0 +1,506 @@
+/* =========================================
+   1. RESET DAN DASAR
+   ========================================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: #EBF4F6;
+    color: #333;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* =========================================
+   2. VARIABEL WARNA
+   ========================================= */
+:root {
+    --warna-gelap: #0A4D5C;
+    --warna-utama: #088395;
+    --warna-sekunder: #7AB2B2;
+    --warna-terang: #EBF4F6;
+    
+    --putih: #ffffff;
+    --text-dark: #2c3e50;
+    --text-muted: #6c757d;
+    --shadow: 0 4px 15px rgba(8, 131, 149, 0.12);
+}
+
+/* =========================================
+   3. HEADER
+   ========================================= */
+.site-header {
+    background-color: var(--warna-gelap);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--putih);
+    text-decoration: none;
+}
+
+.site-header nav {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.site-header nav a {
+    text-decoration: none;
+    color: #b0c4de;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.site-header nav a:hover {
+    color: var(--putih);
+}
+
+/* =========================================
+   4. HERO SECTION
+   ========================================= */
+.hero {
+    background-color: var(--warna-terang);
+    padding: 4rem 0;
+    background-image: radial-gradient(circle at 10% 20%, rgba(122, 178, 178, 0.2) 0%, transparent 20%);
+}
+
+.hero-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 3rem;
+}
+
+.profile-img {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid var(--putih);
+    box-shadow: 0 10px 30px rgba(8, 131, 149, 0.35);
+}
+
+.hero-text .greeting {
+    color: var(--warna-utama);
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.hero-text h1 {
+    font-size: 2.2rem;
+    color: var(--warna-gelap);
+    margin: 0.5rem 0;
+    line-height: 1.2;
+}
+
+.hero-text .role {
+    font-weight: 600;
+    color: var(--warna-utama);
+    margin-bottom: 1rem;
+}
+
+.hero-text .description {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+/* =========================================
+   TOMBOL (DUA-DUANYA BIRU TUA SAMA)
+   ========================================= */
+.btn {
+    padding: 0.8rem 1.8rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s;
+    border: 2px solid transparent;
+}
+
+.btn-primary {
+    background-color: var(--warna-gelap);
+    color: var(--putih);
+    border-color: var(--warna-gelap);
+}
+
+.btn-primary:hover {
+    background-color: var(--warna-utama);
+    border-color: var(--warna-utama);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background-color: var(--warna-gelap);
+    color: var(--putih);
+    border-color: var(--warna-gelap);
+}
+
+.btn-outline:hover {
+    background-color: var(--warna-utama);
+    border-color: var(--warna-utama);
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   5. SECTION HEADER
+   ========================================= */
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    margin-top: 4rem;
+}
+
+.section-header h2 {
+    font-size: 2rem;
+    color: var(--warna-gelap);
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+.section-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background-color: var(--warna-sekunder);
+    border-radius: 2px;
+}
+
+.section-header p {
+    color: var(--text-muted);
+    margin-top: 0.5rem;
+}
+
+/* =========================================
+   6. KEAHLIAN
+   ========================================= */
+.skills {
+    padding-bottom: 4rem;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.skill-card {
+    background: var(--putih);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(8, 131, 149, 0.12);
+    text-align: left;
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid rgba(8, 131, 149, 0.1);
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--warna-sekunder);
+    box-shadow: 0 8px 25px rgba(8, 131, 149, 0.2);
+}
+
+.skill-icon {
+    width: 50px;
+    height: 50px;
+    background-color: var(--warna-terang);
+    color: var(--warna-utama);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.skill-card h3 {
+    font-size: 1.2rem;
+    color: var(--warna-gelap);
+    margin-bottom: 0.5rem;
+}
+
+.skill-card p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+
+.arrow-link {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    color: var(--warna-sekunder);
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.skill-card:hover .arrow-link {
+    transform: translateX(5px);
+    color: var(--warna-utama);
+}
+
+/* =========================================
+   7. PORTOFOLIO
+   ========================================= */
+.gallery {
+    padding-bottom: 4rem;
+    background-color: var(--warna-terang);
+    padding-top: 1rem;
+}
+
+.scroll-wrapper {
+    display: flex;
+    overflow-x: auto;
+    gap: 1.5rem;
+    padding: 1rem 1.5rem 2rem 1.5rem;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; 
+}
+.scroll-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.portfolio-card {
+    min-width: 300px;
+    max-width: 300px;
+    flex: 0 0 auto;
+    scroll-snap-align: center;
+    background: var(--putih);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(8, 131, 149, 0.12);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.portfolio-img {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    background-color: #f0f0f0;
+}
+
+.portfolio-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    transition: transform 0.3s;
+}
+
+.portfolio-card:hover .portfolio-img img {
+    transform: scale(1.05);
+}
+
+.portfolio-card figcaption {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.portfolio-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--warna-gelap);
+}
+
+.portfolio-card p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+    flex-grow: 1;
+}
+
+.tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: auto;
+}
+
+.tags span {
+    background-color: var(--warna-terang);
+    color: var(--warna-utama);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+/* =========================================
+   8. FOOTER DETAIL
+   ========================================= */
+.site-footer {
+    background-color: var(--warna-gelap);
+    color: var(--putih);
+    padding: 1.5rem 0; 
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; 
+    text-align: center;
+}
+
+.footer-left h3 {
+    font-size: 1.3rem; 
+    margin-bottom: 0.3rem;
+    color: var(--warna-terang);
+}
+
+.footer-left p {
+    font-size: 0.85rem; 
+    opacity: 0.8;
+    margin-bottom: 0.2rem;
+}
+
+.footer-left .copyright {
+    margin-top: 0.8rem;
+    font-size: 0.75rem; 
+    opacity: 0.6;
+}
+
+.footer-right h4 {
+    margin-bottom: 0.8rem; 
+    font-size: 1rem; 
+    color: var(--warna-terang);
+}
+
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem; 
+    align-items: center;
+}
+
+.social-btn {
+    color: var(--putih);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+    border-radius: 8px; 
+    background-color: rgba(255,255,255,0.1);
+    width: 100%;
+    max-width: 280px;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.social-btn:hover {
+    background-color: var(--warna-utama);
+    transform: translateY(-2px);
+}
+
+.social-btn i {
+    color: var(--putih) !important;
+    font-size: 1.1rem;
+    width: 20px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+/* =========================================
+   9. MEDIA QUERY TABLET (min-width: 768px)
+   ========================================= */
+@media (min-width: 768px) {
+    .hero-inner {
+        flex-direction: row;
+        text-align: left;
+        justify-content: center;
+        gap: 4rem;
+    }
+    
+    .hero-text {
+        max-width: 500px;
+    }
+
+    .hero-buttons {
+        justify-content: flex-start;
+    }
+
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+        align-items: flex-start; 
+    }
+
+    .social-links {
+        align-items: flex-start;
+    }
+}
+
+/* =========================================
+   10. MEDIA QUERY DESKTOP (min-width: 1024px)
+   ========================================= */
+@media (min-width: 1024px) {
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .hero-text h1 {
+        font-size: 3rem;
+    }
+    
+    .portfolio-card {
+        min-width: 320px;
+        max-width: 320px;
+    }
+}
